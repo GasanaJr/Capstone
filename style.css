@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(247, 242, 236);
+}
+
+.header {
+    background-color: #073d58;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.header img {
+    width: 100px;
+    height: 100px;
+}
+
+.header ul {
+    display: flex;
+}
+
+.header ul li {
+    list-style-type: none;
+    padding: 20px;
+    margin-top: 20px;
+
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: "Inter";
+    font-weight: bolder;
+}
+
+/* .contentOne {
+    display: flex;
+} */
+
+.contentOne {
+    font-family: "Poppins";
+    padding: 20px;
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+.contentOne h1 {
+    font-size: 70px;
+    font-family: serif;
+    font-weight: 600;
+}
+
+.contentOne h1 span {
+    font-family: serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.contentOne a {
+    background: #073d58;
+    color: #fff;
+    padding: 15px 70px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.sign a {
+    background: #1077b0;
+    width: 100px;
+    padding: 5px 20px;
+    margin-left: 10px;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+
+
+.profile img {
+    width: 500px;
+    display: block;
+}
+
+.profile {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+/* .junior {
+    padding: 40px;
+}
+
+.junior img {
+    border-radius: 20px;
+} */
+
+/* .text {
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: "Poppins";
+}
+
+.text button {
+    margin-top: 10px;
+}
+
+.text button {
+    width: 110px;
+    height: 60px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: #073d58;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    font-weight: bold;
+} */
+
+.contact form {
+    background-color: #073d58;
+    margin-top: 30px;
+    width: 500px;
+    margin-left: 30px;
+    padding: 30px;
+    padding-left: 40px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact form input {
+    border-radius: 10px;
+    height: 40px;
+    width: 400px;
+    border: none;
+
+}
+
+.contact form h3 {
+    color: white;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 25px;
+}
+
+.contact form label {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contact form textarea {
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+}
+
+.contact form button {
+    width: 300px;
+    height: 45px;
+    margin-left: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #1077b0;
+    border: none;
+}
+
+.contact {
+    display: flex;
+}
+
+.contact img {
+    width: 716px;
+    height: 550px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.cimage p {
+    margin-left: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-flex;
+}
+
+.fa-solid {
+    padding-right: 10px;
+}
+
+.t1 {
+    margin-bottom: 100px;
+}
+
+.b1 {
+    margin-top: 60px;
+}
+
+form p {
+    color: white;
+    padding: 10px;
+}
+
+section form {
+    background-color: #073d58;
+    width: 500px;
+    padding: 30px;
+    margin: auto;
+    padding-left: 40px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+section form input {
+    border-radius: 10px;
+    height: 40px;
+    width: 400px;
+    border: none;
+
+}
+
+section form h3 {
+    color: white;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 25px;
+}
+
+section form label {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+section form textarea {
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+}
+
+section form button {
+    width: 300px;
+    height: 45px;
+    margin-left: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #1077b0;
+    border: none;
+    cursor: pointer;
+}
+
+section h3 {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+.sign {
+    display: flex;
+}
+
+.sign p {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+#sign {
+    width: 100px;
+}
+
+.signin label {
+    color: black;
+}
+
+
+.signin button {
+    color: black;
+}
+
+.about p {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.abt {
+    display: flex;
+}
+
+.abt p {
+    padding: 20px;
+    margin: auto;
+}
+
+.about img {
+    width: 548px;
+    height: 328px;
+    border-radius: 38px;
+    padding: 20px;
+}
+
+.skills img {
+    width: 400px;
+    height: 314px;
+    border-radius: 44px;
+    padding: 10px;
+}
+
+.skills {
+    display: flex;
+    padding: 30px;
+}
+
+.skills p {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.blog {
+    display: flex;
+}
+
+.blogs {
+    display: flex;
+    padding: 10px;
+}
+
+.blogs img {
+    width: 494px;
+    height: 306px;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.blogs p {
+    font-size: 20px;
+    width: 494px;
+    display: block;
+    padding: 10px;
+}
+
+.related {
+    width: 382px;
+    height: 757px;
+    background: #073d58;
+    margin-top: 10px;
+}
+
+.content {
+    display: flex;
+    margin: 20px;
+}
+
+.content img {
+    width: 102px;
+    height: 70px;
+}
+
+.content p {
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+}
+
+
+
+.form input {
+    width: 295px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+
+#sub {
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.form button {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: #7DC7F0;
+    color: #000;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    font-weight: bold;
+    margin-left: 70px;
+
+}
+
+.wrapper {
+    font-family: "Poppins";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.wrapper h1 {
+    font-size: 3em;
+    margin: 25px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-top: 30px;
+}
+
+.card {
+    min-height: 220px;
+    width: 320px;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    margin: 20px 4px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper h1 p {
+    padding: 10px;
+}
+
+.card i {
+    margin: 20px;
+    color: #073d58;
+    font-size: 40px;
+    /* ff5724 */
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.card p {
+    color: #6c757d;
+    text-align: center;
+}
