@@ -326,23 +326,77 @@ section h3 {
     padding: 20px;
 }
 
-.skills img {
-    width: 400px;
-    height: 314px;
-    border-radius: 44px;
-    padding: 10px;
-}
-
-.skills {
+.challenges {
     display: flex;
-    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    background: #16384c;
 }
 
-.skills p {
-    font-size: 20px;
-    padding: 10px;
-    font-weight: 500;
+.challenge {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+
 }
+
+.challenge .ccard {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+
+.challenge .ccard:hover {
+    height: 500px;
+}
+
+.challenge .ccard .imgBox {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+
+}
+
+.challenge .ccard .imgBox img {
+    max-width: 100%;
+    border-radius: 4px;
+} 
+
+.challenge .ccard .ccontent {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 20px;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.challenge .ccard:hover .ccontent {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 20px;
+    transition-delay: 0.3s;
+} 
+
 
 .blog {
     display: flex;
