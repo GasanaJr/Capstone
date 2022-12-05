@@ -15,6 +15,7 @@ body {
     background-color: #073d58;
     display: flex;
     justify-content: space-between;
+    padding-right: 40px;
     width: 100%;
 }
 
@@ -49,9 +50,10 @@ body {
 
 .contentOne {
     font-family: "Poppins";
-    padding: 20px;
+    padding: 50px;
     margin-top: 10%;
-    max-width: 600px;
+    max-width: 700px;
+
 }
 
 .contentOne h1 {
@@ -310,6 +312,10 @@ section h3 {
     font-weight: 400;
 }
 
+.about {
+    padding: 40px;
+}
+
 .abt {
     display: flex;
 }
@@ -331,6 +337,7 @@ section h3 {
     justify-content: center;
     align-items: center;
     background: #16384c;
+    margin-top: 100px;
 }
 
 .challenge {
