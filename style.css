@@ -216,8 +216,7 @@ form p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #16384c;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .challenge {
@@ -235,7 +234,7 @@ form p {
     position: relative;
     max-width: 300px;
     height: 215px;
-    background: #fff;
+    background: #16384c;
     margin: 30px 10px;
     padding: 20px 15px;
     display: flex;
@@ -252,8 +251,7 @@ form p {
     position: relative;
     width: 260px;
     height: 260px;
-    top: -60px;
-    left: 20px;
+    top: 0px;
     z-index: 1;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 
@@ -272,7 +270,7 @@ form p {
     text-align: center;
     font-size: 20px;
     font-family: "Poppins";
-    color: #111;
+    color: #fff;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s ease-in-out;
