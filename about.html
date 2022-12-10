@@ -5,43 +5,161 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resp.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="header">
-        <img src="NAV.png" alt="">
-        <ul>
-            <li><a href="index.html">Home</a></li>
+    <style>
+         .life {
+        position: relative;
+        width: 1200px;
+        height: 300px;
+       margin-top: 30px;
+       margin-left: 70px;
+        display: flex;
+        flex-wrap: wrap;
+     }
+     
+     .life .lcontent {
+         position: relative;
+         width: 350px;
+         height: calc(500px - 30px);
+          background: #000; 
+         float: left;
+         margin: 15px;
+          box-sizing: border-box; 
+          overflow: hidden; 
+         border-radius: 10px;
+      
+     } 
+     
+     .life .lcontent .icon {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #f00;
+         transition: 0.5s;
+         z-index: 1;
+     } 
+     
+     .life .lcontent:hover .icon{
+         top: 20px;
+         left: calc(50% - 40px);
+         width: 80px;
+         height: 80px;
+         border-radius: 50%;
+     }
+     
+     .life .lcontent .icon .fa {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         font-size: 80px;
+         transition: 0.5s;
+         color: #fff;
+     }
+     
+     .life .lcontent:hover .icon .fa {
+         font-size: 40px;
+     }
+     
+     .life .lcontent .contentt {
+         position: absolute;
+         top: 100%;
+         height: calc(100% - 100px);
+         text-align: center;
+         padding: 20px;
+         box-sizing: border-box;
+         transition: 0.5s;
+         opacity: 0;
+     }
+     
+     .life .lcontent:hover .contentt {
+         top: 100px;
+         opacity: 1;
+     }
+     
+     .life .lcontent .contentt h3 {
+         margin: 0 0 10px;
+         padding: 0;
+         color: #fff;
+         font-size: 24px;
+     }
+     
+     .life .lcontent .contentt p {
+         margin: 0;
+         padding: 0;
+         color: #fff;
+         font-family: "Poppins";
+         font-size: 20px;
+     }
+     
+     .life .lcontent:nth-child(1) .icon {
+         background: #319635;
+     }
+     
+     .life .lcontent:nth-child(1) {
+         background: #4caf50;
+     }
+     
+     .life .lcontent:nth-child(2) .icon {
+         background: #d03852;
+     }
+     
+     .life .lcontent:nth-child(2) {
+         background: #f54967;
+     }
+     
+     .life .lcontent:nth-child(3) .icon {
+         background: #23798e;
+     }
+     
+     .life .lcontent:nth-child(3) {
+         background: #328fa5;
+     }
+
+     @media only screen and (max-width: 768px) {
+        .life {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        
+     }
+     
+     .life .lcontent {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-left: 5%;
+        margin-right: 10%;
+        width: 100%;
+     } 
+     }
+    
+    </style>
+    <header>
+		<a href="#" class="logo"><span>DJ</span></a>
+
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
             <li><a href="about.html">About me</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="port.html">Portfolio</a></li>
             <li><a href="blog.html">Blogs</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-    <!-- <section class="about">
-        <div class="abt">
-            <img src="r.jpg" alt="">
-            <p></p>
-        </div>
-        <div class="abt">
-            <p></p>
-            <img src="alu.jpg" alt="">
-        </div>
-    </section> -->
-    <!-- <section class="me">
-        <div class="prof">
-            <img src="Juniorr.jpg" alt="">
-        </div>
-        <div class="aboutc">
-            <h1>About Me</h1>
-            <p>
-                . .   
-            </p>
-        </div>
-    </section> -->
+		</ul>
+        <div class="main">
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
 
     <h1 style="font-family: Poppins; text-align:center; padding-top:20px;">ABOUT ME</h1>
 
@@ -83,5 +201,6 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

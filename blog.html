@@ -5,34 +5,142 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="resp.css">
     <title>Blog</title>
 </head>
 <body>
-    <div class="header">
-        <img src="NAV.png" alt="">
-        <ul>
-            <li><a href="index.html">Home</a></li>
+    <style>
+        
+.blog {
+    display: flex;
+    margin-top: 140px;
+}
+
+.blogs {
+    display: flex;
+    padding: 10px;
+}
+
+.blogs img {
+    width: 494px;
+    height: 306px;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.blogs p {
+    font-size: 16px;
+    width: 494px;
+    display: block;
+    padding: 10px;
+    color: rgb(48, 45, 45);
+}
+
+.related {
+    width: 382px;
+    height: 100%;
+    background: #073d58;
+    margin-top: 25px;
+}
+
+.related h3 {
+    text-align: center;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    margin: 20px;
+}
+
+.content img {
+    width: 102px;
+    height: 70px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .blog {
+        display: flex;
+        flex-direction: column;
+    }
+    .blogs {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .blogs img {
+    width: 90%;
+    min-width: 300px;
+
+}
+
+.blogs p {
+    font-size: 18px;
+    width: 80%;
+}
+
+.related {
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.form button {
+    width: 40%;
+    height: 40px;
+
+}
+
+.form input {
+    width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px;
+}
+    
+}
+
+    </style>
+    <header>
+		<a href="#" class="logo"><span>DJ</span></a>
+
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
             <li><a href="about.html">About me</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="port.html">Portfolio</a></li>
             <li><a href="blog.html">Blogs</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
+		</ul>
+        <div class="main">
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
     <section class="blog">
         <div class="blogs">
             <div>
                 <img src="r.jpg" alt="">
                 <p> <b>Amazon’s New Robot Can Handle Most Items in the Everything Store</b> <br>
-                    Amazon built an ecommerce empire by automating much of the work needed to move goods and pack orders in its warehouses. There is still plenty of work for humans in those vast facilities because some tasks are too complex for robots to do reliably—but a new robot called Sparrow could shift the balance that Amazon strikes between people and machines
+                    Amazon built an ecommerce empire by automating much of the work needed to move goods and pack orders in its warehouses. 
                     </p>
             </div>
             <div>
                 <img src="r.jpg" alt="">
                 <p> <b>Amazon’s New Robot Can Handle Most Items in the Everything Store</b><br>
-                    Amazon built an ecommerce empire by automating much of the work needed to move goods and pack orders in its warehouses. There is still plenty of work for humans in those vast facilities because some tasks are too complex for robots to do reliably—but a new robot called Sparrow could shift the balance that Amazon strikes between people and machines
-                    </p>
+                    Amazon built an ecommerce empire by automating much of the work needed to move goods and pack orders in its warehouses.     </p>
             </div>
         </div>
         <div class="related">
@@ -72,5 +180,6 @@
         </div>
  
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
