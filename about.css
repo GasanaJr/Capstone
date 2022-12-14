@@ -1,0 +1,128 @@
+ .life {
+        position: relative;
+        width: 1200px;
+        height: 300px;
+       margin-top: 30px;
+       margin-left: 70px;
+        display: flex;
+        flex-wrap: wrap;
+     }
+     
+.life .lcontent {
+         position: relative;
+         width: 350px;
+         height: calc(500px - 30px);
+          background: #000; 
+         float: left;
+         margin: 15px;
+          box-sizing: border-box; 
+          overflow: hidden; 
+         border-radius: 10px;
+      
+     } 
+     
+.life .lcontent .icon {
+        position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #f00;
+         transition: 0.5s;
+         z-index: 1;
+     } 
+     
+     .life .lcontent:hover .icon{
+         top: 20px;
+         left: calc(50% - 40px);
+         width: 80px;
+         height: 80px;
+         border-radius: 50%;
+     }
+     
+     .life .lcontent .icon .fa {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         font-size: 80px;
+         transition: 0.5s;
+         color: #fff;
+     }
+     
+     .life .lcontent:hover .icon .fa {
+         font-size: 40px;
+     }
+     
+     .life .lcontent .contentt {
+         position: absolute;
+         top: 100%;
+         height: calc(100% - 100px);
+         text-align: center;
+         padding: 20px;
+         box-sizing: border-box;
+         transition: 0.5s;
+         opacity: 0;
+     }
+     
+     .life .lcontent:hover .contentt {
+         top: 100px;
+         opacity: 1;
+     }
+     
+     .life .lcontent .contentt h3 {
+         margin: 0 0 10px;
+         padding: 0;
+         color: #fff;
+         font-size: 24px;
+     }
+     
+     .life .lcontent .contentt p {
+         margin: 0;
+         padding: 0;
+         color: #fff;
+         font-family: "Poppins";
+         font-size: 20px;
+     }
+     
+     .life .lcontent:nth-child(1) .icon {
+         background: #319635;
+     }
+     
+     .life .lcontent:nth-child(1) {
+         background: #4caf50;
+     }
+     
+     .life .lcontent:nth-child(2) .icon {
+         background: #d03852;
+     }
+     
+     .life .lcontent:nth-child(2) {
+         background: #f54967;
+     }
+     
+     .life .lcontent:nth-child(3) .icon {
+         background: #23798e;
+     }
+     
+     .life .lcontent:nth-child(3) {
+         background: #328fa5;
+     }
+
+     @media only screen and (max-width: 768px) {
+        .life {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        
+     }
+     
+     .life .lcontent {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-left: 5%;
+        margin-right: 10%;
+        width: 100%;
+     } 
+     }
