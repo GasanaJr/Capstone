@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resp.css">
+    <title>Add Post</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        body {
+            background-color: rgb(247, 242, 236);
+            font-family: 'Poppins', sans-serif;
+        }
+        h3 {
+            margin-top: 110px;
+            text-align: center;
+            font-size: 24px;
+        }
+        form {
+            width: 80%;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 20px;
+            padding: 5px;
+        }
+        .text-input {
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .button {
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #073d58;
+        }
+    </style>
+     <header>
+		<a href="#" class="logo"><span>DJ</span></a>
+
+		<ul class="navbar">
+			<li><a href="admin.html">Home</a></li>
+            <li><a href="queries.html">Questions</a></li>
+            <li><a href="article.html">Articles</a></li>
+		</ul>
+
+		<div class="main">
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+
+    <h3>Add a new post</h3>
+    <form action="">
+        <div>
+            <label for="">Heading</label>
+            <input type="text" class="text-input" name="title">
+        </div>
+        <div>
+            <label for="">Content</label>
+            <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        </div>
+        <button class="button">Add post</button>
+    </form>
+
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+    .create( document.querySelector( '#body' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+            ]
+        }
+    } )
+    .catch( error => {
+        console.log( error );
+    } );
+
+    </script>
+    
+</body>
+</html>
