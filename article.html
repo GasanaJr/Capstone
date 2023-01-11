@@ -9,6 +9,48 @@
 </head>
 <body>
     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        body {
+            background-color: rgb(247, 242, 236);
+            font-family: 'Poppins', sans-serif;
+        }
+        h3 {
+            margin-top: 110px;
+            text-align: center;
+            font-size: 24px;
+        }
+        form {
+            width: 80%;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 20px;
+            padding: 5px;
+        }
+        .text-input {
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .button {
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #073d58;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -60,47 +102,97 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
+    <h3>Add a new post</h3>
+    <form action="" id="post-form">
+        <div>
+            <label for="">ID</label>
+            <input type="text" class="text-input" name="title" id="id">
+        </div>
+        <div>
+            <label for="">Title</label>
+            <input type="text" class="text-input" name="title" id="title">
+        </div>
+        <div>
+            <label for="">Author</label>
+            <input type="text" class="text-input" name="title" id="auth">
+        </div>
+        <div>
+            <label for="">Date</label>
+            <input type="text" class="text-input" name="title" id="date">
+        </div>
+        <div>
+            <label for="">Content</label>
+            <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" class="button">Add post</button>
+    </form>
+
+    <h3>POSTS AVAILABLE ON THE BLOG</h3>
 
     <section id="article">
         <table>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Date</th>
-              <th colspan="3">Action</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <!-- <td></td> -->
-              <td>Smart homes: A fiction or a reality</td>  
-              <td>Junior Gasana</td>
-              <td>12-December</td>
-              <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-              <td><button class="button" id="Red"><a href="">Delete</a></button></td>
-              <td><button class="button"><a href="">Publish</a></button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Southgate still in, Neymar still controversial</td>
-                <td>Lavie Homme d' affaire</td>
-                <td>10-December</td>
-                <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-              <td><button class="button" id="Red"><a href="">Delete</a></button></td>
-              <td><button class="button"><a href="">Publish</a></button></td>
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th colspan="3">Action</th>
               </tr>
-              <tr>
-                <td>3</td>
-                <td>Javascript changing the view of web design</td>
-                <td>Izihirwe Perfect Gift</td>
-                <td>10-December</td>
-                <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-              <td><button class="button" id="Red"><a href="">Delete</a></button></td>
-              <td><button class="button"><a href="">Publish</a></button></td>
-              </tr>
+
+            </thead>
+            <tbody id="post-list">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Smart homes: A fiction or a reality</td>  
+                    <td>Junior Gasana</td>
+                    <td>12-December</td>
+                    <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
+                    <td><button class="button delete" id="Red"><a href="#">Delete</a></button></td>
+                    <td><button class="button"><a href="">Publish</a></button></td>
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>Southgate still in, Neymar still controversial</td>
+                      <td>Lavie Homme d' affaire</td>
+                      <td>10-December</td>
+                      <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
+                    <td><button class="button delete" id="Red"><a href="#">Delete</a></button></td>
+                    <td><button class="button"><a href="">Publish</a></button></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Javascript changing the view of web design</td>
+                      <td>Izihirwe Perfect Gift</td>
+                      <td>10-December</td>
+                      <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
+                    <td><button class="button delete" id="Red" ><a href="#">Delete</a></button></td>
+                    <td><button class="button"><a href="">Publish</a></button></td>
+                    </tr> -->
+            </tbody>
+            
           </table>
     </section>
-    <a href="post.html"><button class="button">Add Article</button></a>
-    
+    <!-- <a href="post.html"><button class="button">Add Article</button></a> -->
+    <script src="post.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+    .create( document.querySelector( '#body' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+            ]
+        }
+    } )
+    .catch( error => {
+        console.log( error );
+    } );
+
+
+    </script>
 </body>
 </html>

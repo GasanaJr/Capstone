@@ -30,16 +30,24 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
+    <div class="container">
+        <div class="popup" id="popup">
+            <img src="tickk.png">
+            <h2>Thank You!</h2>
+            <p>Your Message has been successfully sent. Thanks</p>
+            <button type="button" id="cbtn">OK</button>
+        </div>
+    </div>
     <section class="contact">
-        <form action="">
+        <form action="" id="form">
             <h3>Reach out to me</h3>
             <label for="">Email</label> <br>
-            <input type="text"><br><br>
+            <input type="text" name = "email" id="email"><br><br>
             <label for="">Full Name</label><br>
-            <input type="text"><br><br>
+            <input type="text" name = "fname" id="fname"><br><br>
             <label for="">Content</label><br>
-            <textarea></textarea>
-            <button>Submit</button>
+            <textarea name="text" id="text"></textarea>
+            <button type="submit" >Send</button> 
         </form>
         <div class="cimage">
             <img src="images (1).jpeg" alt="">
@@ -48,5 +56,27 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script type="text/javascript">
+		//  let popup = document.getElementById('popup');
+		//  let sbtn = document.getElementById('sbtn');
+		//  let cbtn = document.getElementById('cbtn');
+		//  sbtn.addEventListener("click", function(e){
+		//  	e.preventDefault();
+		//  	popup.classList.add("open-popup");
+		//  });
+		//  cbtn.addEventListener("click", function(e){
+		//  	e.preventDefault();
+		//  	popup.classList.remove("open-popup");
+		//  });
+
+        //  sbtn.addEventListener("click", mask);
+
+        // function mask() {
+        //     var body = document.querySelector('form');
+        //     var image = document.querySelector('.cimage');
+        //     v
+        // }
+	</script>
 </body>
 </html>

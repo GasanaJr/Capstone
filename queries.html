@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="resp.css">
     <title>Admin Portal</title>
 </head>
-<body>
+<body onload="show()">
     <style>
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 1.1rem;
+            margin-top: 100px;
         }
 
         th,td {
@@ -35,6 +36,7 @@
             cursor: pointer;
             color: #fff;
             background-color: #073d58;
+
         }
 
         button a {
@@ -54,43 +56,46 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-
-    <section id="article">
+    <div>
         <table>
-            <tr>
-              <th>ID</th>
-              <th>Email</th>
-              <th>Full Name</th>
-              <th>Content</th>
-              <th colspan="2">Action</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <!-- <td></td> -->
-              <td>d.gasana@alustudent.com</td>  
-              <td>Junior Gasana</td>
-              <td>Hello, How much is a website</td>
-              <td><button class="button"><a href="">Move</a></button></td>
-              <td><button class="button"><a href="">Message</a></button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>e.nduwimana@alustudent.com</td>
-                <td>Elvis Nduwimana</td>
-                <td>Heyy, How much is a mobile app</td>
-                <td><button class="button"><a href="">Move</a></button></td>
-                <td><button class="button"><a href="">Message</a></button></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>a.gatwech@alustudent.com</td>
-                <td>Angeline Gabriel</td>
-                <td>Do you offer trainings</td>
-                <td><button class="button"><a href="">Move</a></button></td>
-                <td><button class="button"><a href="">Message</a></button></td>
-              </tr>
-          </table>
-    </section>
+    <thead>
+        <th>Email</th>
+        <th>Full Name</th>
+        <th>Content</th>
+        <th>Action</th>
+    </thead>
+   <tbody>
+   </tbody>
+   </table>
+        </div>
+    <div id="table"></div>
+    <script>
+         const data = localStorage.getItem("query");
+            const message = JSON.parse(data);
+        function show() {
+            var table = document.querySelector('table');
+            var tbody = document.querySelector('tbody');
+            // var row = document.createElement('tr');
+            // var td = document.createElement('td');
+            for (let i =0; i< message.length; i++) {
+                tbody.innerHTML += `
+                <td>${message[i].email}</td>
+                <td>${message[i].fullName}</td>
+                <td>${message[i].text}</td>
+                <td><button class="button edit" id="edit"><a href="#">Edit</a></button> </td>
+                <td><button class="button delete" id="delete"><a href="#">Delete</a></button> </td>
+                `;
+
+            }
+        }
+        document.querySelector('tbody').addEventListener('click', function(e){
+            e.preventDefault();
+            var target = e.target;
+            if(target.classList.contains('delete')) {
+                target.parentElement.parentElement.remove();
+            }
+        });
+    </script>
     
 </body>
 </html>
