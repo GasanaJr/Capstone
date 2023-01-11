@@ -31,12 +31,18 @@
 		</div>
 	</header>
     <section class="login">
-        <h3>ADMIN LOGIN</h3>
-        <form action="">
-            <label for="">Username</label> <br>
-            <input type="text"><br><br>
-            <label for="">Password</label><br>
-            <input type="password"><br><br>
+        <form class="login_form" action="admin.html" name="form" onsubmit="return validated()">
+            <h3>ADMIN LOGIN</h3>
+            <div>
+            <label for="">Email</label> <br>
+            <input type="text" name="email" autocomplete="off"><br><br>
+            </div>
+            <div id="email_error">Please Fill Your Username</div>
+            <div>
+                <label for="">Password</label><br>
+                <input type="password" name="password"><br><br>
+            </div>
+            <div id="pass_error">Please Fill Your Password</div>
             <button>Login</button>
             <div class="sign">
                 <p>Not a member, click here to Sign up</p><a href="signup.html">Sign Up</a>
@@ -44,5 +50,6 @@
         </form>
     </section>
     <script src="script.js"></script>
+    <script src="valid.js"></script>
 </body>
 </html>

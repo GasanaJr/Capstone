@@ -9,7 +9,11 @@
 </head>
 <body>
     <style>
-        table {
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+                body {
+                    font-family: "Poppins", sans-serif;
+                }
+            table {
             width: 100%;
             border-collapse: collapse;
             font-size: 1.1rem;
@@ -20,12 +24,34 @@
             text-align: left;
             border-bottom: 1px solid #d3d3d3;
         }
-        section {
+
+        .userr {
             margin-top: 100px;
-            display: flex;
             margin-left: 30px;
-            padding: 20px;
         }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            padding-top: 20px;
+        }
+
+        #admin {
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .stati {
+	display: flex;
+}
+
+.exp {
+	margin-top: 100px;
+	padding: 40px;
+	font-size: 20px;
+}
+
     </style>
     <header>
 		<a href="#" class="logo"><span>DJ</span></a>
@@ -40,46 +66,94 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-
-    <section id="article">
+    <section class="userr">
+        <h2>Welcome Admin</h2>
+        <p id="admin">Admin privileges</p>
         <table>
             <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Date</th>
-              <th colspan="3">Action</th>
+              <th>Privilege</th>
+              <th>Description</th>
             </tr>
             <tr>
-              <td>1</td>
-              <!-- <td></td> -->
-              <td>Smart homes: A fiction or a reality</td>  
-              <td>Junior Gasana</td>
-              <td>12-December</td>
-              <td><a href="">Edit</a></td>
-              <td><a href="">Delete</a></td>
-              <td><a href="">Publish</a></td>
-            </tr>
+              <td>Edit</td>  
+              <td>Make Edits to the contents on the existing articles on the blog.</td>
             <tr>
-                <td>2</td>
-                <td>Southgate still in, Neymar still controversial</td>
-                <td>Lavie Homme d' affaire</td>
-                <td>10-December</td>
-                <td><a href="">Edit</a></td>
-                <td><a href="">Delete</a></td>
-                <td><a href="">Publish</a></td>
+                <td>Delete</td>
+                <td>Delete existing articles on the blog.</td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>Javascript changing the view of web design</td>
-                <td>Izihirwe Perfect Gift</td>
-                <td>10-December</td>
-                <td><a href="">Edit</a></td>
-                <td><a href="">Delete</a></td>
-                <td><a href="">Publish</a></td>
+                <td>Publish</td>
+                <td>This is for publishing the edits you made on the articles or newly created articles</td>
+              </tr>
+              <tr>
+                <td>Add Post</td>
+                <td>This is for creating or adding a new article on the blog</td>
               </tr>
           </table>
+
     </section>
-    
+    <h2>Blog Statistics</h2>
+    <section class="stats">
+    	<div class="stati">
+            <div id="curve_chart" style="width: 900px; height: 500px" class="size"></div>
+    <p class="exp">This is a graph of the first four months illustrating the articles and the subscriptions made in those four months.</p>
+        </div>
+        <div class="stati">
+            <p class="exp">
+                This pie chart shows the number of reads per genre of articles on the blog. This is to visualize the most read genres to emphasize on them.
+            </p>
+            <div id="donutchart" style="width: 1200px; height: 500px;" class="size"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Articles', 'Subscription'],
+          ['Jan',  100,      400],
+          ['Feb',  120,      460],
+          ['March',  70,       1120],
+          ['April',  230,      540]
+        ]);
+
+        var options = {
+          title: 'Article-Subscription',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Genra', 'Reads'],
+          ['Romance',     11],
+          ['Sci-fi',      2],
+          ['Sports',  2],
+          ['Health', 2],
+          ['Technology',    7]
+        ]);
+
+        var options = {
+          title: 'Reads Per Genra',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+        
+      </script>
 </body>
 </html>

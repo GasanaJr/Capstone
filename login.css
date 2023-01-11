@@ -7,6 +7,8 @@
     padding: 30px;
     margin: 120px auto;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -15,7 +17,6 @@ section form input {
     height: 40px;
     width: 400px;
     border: none;
-    display: flex;
     align-items: center;
 
 }
@@ -52,6 +53,32 @@ section form button {
 #sign {
     width: 100%;
 }
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+form #email_error,
+form #pass_error {
+    /* margin: 5px auto; */
+    width: 345px;
+    font-size: 18px;
+    color: #f0e8e8;
+    background: rgba(255, 0, 0, 0.1);
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: 1px solid #EF9A9A;
+    display: none;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+}
+
+
         @media only screen and (max-width: 768px) {
     .login {
         flex-direction: column;
