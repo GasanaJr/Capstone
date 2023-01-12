@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resp.css">
-    <title>Add Post</title>
+    <title>Posts</title>
 </head>
-<body>
+<body onload="show()">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
         body {
@@ -51,6 +51,31 @@
             color: #fff;
             background-color: #073d58;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        th,td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #d3d3d3;
+        }
+        section {
+            margin-top: 10px;
+            margin-left: 30px;
+            padding: 20px;
+        }
+        h3 {
+            margin-bottom: 20px;
+        }
+        .Red {
+            background-color: rgb(231, 55, 55);
+        }
+        button a {
+            color: #fff;
+        }
     </style>
      <header>
 		<a href="#" class="logo"><span>DJ</span></a>
@@ -59,6 +84,7 @@
 			<li><a href="admin.html">Home</a></li>
             <li><a href="queries.html">Questions</a></li>
             <li><a href="article.html">Articles</a></li>
+            <li><a href="post.html">Posts</a></li>
 		</ul>
 
 		<div class="main">
@@ -66,21 +92,25 @@
 		</div>
 	</header>
 
-    <h3>Add a new post</h3>
-    <form action="">
-        <div>
-            <label for="">Heading</label>
-            <input type="text" class="text-input" name="title">
-        </div>
-        <div>
-            <label for="">Content</label>
-            <textarea name="body" id="body" cols="30" rows="10"></textarea>
-        </div>
-        <button class="button">Add post</button>
-    </form>
+    <section>
+        <h3>POSTS AVAILABLE ON THE BLOG</h3>
+    <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th colspan="3">Action</th>
+          </tr>
 
-
-
+        </thead>
+        <tbody id="post-list">
+        </tbody>
+        
+      </table>
+    </section>
+    <script src="postm.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
     <script>
         ClassicEditor

@@ -42,6 +42,12 @@
         button a {
             color: white;
         }
+        .Red {
+            background-color: rgb(231, 55, 55);
+        }
+        .Green {
+            background-color: rgb(83, 221, 83);
+        }
     </style>
     <header>
 		<a href="#" class="logo"><span>DJ</span></a>
@@ -50,6 +56,7 @@
 			<li><a href="admin.html">Home</a></li>
             <li><a href="queries.html">Questions</a></li>
             <li><a href="article.html">Articles</a></li>
+            <li><a href="post.html">Posts</a></li>
 		</ul>
 
 		<div class="main">
@@ -70,6 +77,14 @@
         </div>
     <div id="table"></div>
     <script>
+        const deleteItem = (id) => {
+            // console.log(id," to be deleted");
+            const data = localStorage.getItem("query");
+            const message = JSON.parse(data);
+            message.splice(id-1,1);
+            localStorage.setItem("query",JSON.stringify(message));
+            window.location.reload();
+        }
          const data = localStorage.getItem("query");
             const message = JSON.parse(data);
         function show() {
@@ -82,19 +97,19 @@
                 <td>${message[i].email}</td>
                 <td>${message[i].fullName}</td>
                 <td>${message[i].text}</td>
-                <td><button class="button edit" id="edit"><a href="#">Edit</a></button> </td>
-                <td><button class="button delete" id="delete"><a href="#">Delete</a></button> </td>
+                <td><button class="button Green" id="edit"><a href="#">Reply</a></button> </td>
+                <td><button class="button Red" id="delete" onclick="deleteItem(${message[i].id})"><a href="#">Delete</a></button> </td>
                 `;
 
             }
         }
-        document.querySelector('tbody').addEventListener('click', function(e){
-            e.preventDefault();
-            var target = e.target;
-            if(target.classList.contains('delete')) {
-                target.parentElement.parentElement.remove();
-            }
-        });
+        // document.querySelector('tbody').addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     var target = e.target;
+        //     if(target.classList.contains('delete')) {
+        //         target.parentElement.parentElement.remove();
+        //     }
+        // });
     </script>
     
 </body>
