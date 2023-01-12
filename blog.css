@@ -2,11 +2,14 @@
 .blog {
     display: flex;
     margin-top: 140px;
+    max-width: 600px;
+
 }
 
 .blogs {
     display: flex;
     padding: 10px;
+    flex-direction: row;
 }
 
 .blogs img {
@@ -30,6 +33,7 @@
     height: 100%;
     background: #073d58;
     margin-top: 25px;
+    visibility: hidden;
 }
 
 .related h3 {

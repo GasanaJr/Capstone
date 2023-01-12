@@ -51,23 +51,6 @@
             color: #fff;
             background-color: #073d58;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1.1rem;
-        }
-
-        th,td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #d3d3d3;
-        }
-        section {
-            margin-top: 100px;
-            display: flex;
-            margin-left: 30px;
-            padding: 20px;
-        }
         .button {
             margin-left: 40px;
             width: 100px;
@@ -96,6 +79,7 @@
 			<li><a href="admin.html">Home</a></li>
             <li><a href="queries.html">Questions</a></li>
             <li><a href="article.html">Articles</a></li>
+            <li><a href="post.html">Posts</a></li>
 		</ul>
 
 		<div class="main">
@@ -104,10 +88,6 @@
 	</header>
     <h3>Add a new post</h3>
     <form action="" id="post-form">
-        <div>
-            <label for="">ID</label>
-            <input type="text" class="text-input" name="title" id="id">
-        </div>
         <div>
             <label for="">Title</label>
             <input type="text" class="text-input" name="title" id="title">
@@ -118,60 +98,15 @@
         </div>
         <div>
             <label for="">Date</label>
-            <input type="text" class="text-input" name="title" id="date">
+            <input type="date" class="text-input" name="title" id="date">
         </div>
         <div>
             <label for="">Content</label>
-            <textarea name="body" id="body" cols="30" rows="10"></textarea>
+            <!-- <textarea name="body" id="body" cols="30" rows="10"></textarea> -->
+            <input type="text" id = "text">
         </div>
         <button type="submit" class="button">Add post</button>
     </form>
-
-    <h3>POSTS AVAILABLE ON THE BLOG</h3>
-
-    <section id="article">
-        <table>
-            <thead>
-                <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Date</th>
-                <th colspan="3">Action</th>
-              </tr>
-
-            </thead>
-            <tbody id="post-list">
-                <!-- <tr>
-                    <td>1</td>
-                    <td>Smart homes: A fiction or a reality</td>  
-                    <td>Junior Gasana</td>
-                    <td>12-December</td>
-                    <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-                    <td><button class="button delete" id="Red"><a href="#">Delete</a></button></td>
-                    <td><button class="button"><a href="">Publish</a></button></td>
-                  </tr>
-                  <tr>
-                      <td>2</td>
-                      <td>Southgate still in, Neymar still controversial</td>
-                      <td>Lavie Homme d' affaire</td>
-                      <td>10-December</td>
-                      <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-                    <td><button class="button delete" id="Red"><a href="#">Delete</a></button></td>
-                    <td><button class="button"><a href="">Publish</a></button></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Javascript changing the view of web design</td>
-                      <td>Izihirwe Perfect Gift</td>
-                      <td>10-December</td>
-                      <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-                    <td><button class="button delete" id="Red" ><a href="#">Delete</a></button></td>
-                    <td><button class="button"><a href="">Publish</a></button></td>
-                    </tr> -->
-            </tbody>
-            
-          </table>
     </section>
     <!-- <a href="post.html"><button class="button">Add Article</button></a> -->
     <script src="post.js"></script>

@@ -1,24 +1,18 @@
 var selectedRow = null;
-
+var id_no;
+var titlee;
+var authorr;
+var datee;
+var content;
 // Delete Data
-
-
-document.querySelector("#post-list").addEventListener("click", (e) => {
-    target = e.target;
-    if(target.classList.contains("delete")) {
-        target.parentElement.parentElement.remove();
-        // showAlert("post Data Deleted", "danger");
-    }
-})
 
 // Clear all fields 
 
 function clearFields() {
-    document.querySelector("#id").value = "";
     document.querySelector("#title").value = "";
     document.querySelector("#auth").value = "";
     document.querySelector("#date").value = "";
-    document.querySelector("#body").value = "";
+    document.querySelector("#text").value = "";
 }
 
 
@@ -27,43 +21,47 @@ document.querySelector("#post-form").addEventListener("submit", (e) => {
     e.preventDefault();
 
     // Get form values
-    const id = document.querySelector("#id").value;
     const title = document.querySelector("#title").value; 
     const author = document.querySelector("#auth").value; 
     const date = document.querySelector("#date").value; 
+    const contentt = document.querySelector('#text').value;
 
     // Validate
 
-    if (id == "" || title == "" || author == "" || date == "") {
+    if (title == "" || author == "" || date == "") {
         showAlert("Please fill in all fields", "danger");
     }
 
     else {
-        if (selectedRow == null) {
-            const list = document.querySelector("#post-list");
-            const row = document.createElement("tr");
-
-            row.innerHTML = `
-            <td> ${id}</td>
-            <td> ${title}</td>
-            <td> ${author}</td>
-            <td> ${date}</td>
-            <td><button class="button" id="Green" ><a href="">Edit</a></button></td>
-            <td><button class="button delete" id="Red" ><a href="#">Delete</a></button></td>
-            <td><button class="button"><a href="">Publish</a></button></td>
-            `;
-            list.appendChild(row);
-            selectedRow = null;
-            showAlert("Post Added", "success");
+        var post = JSON.parse(localStorage.getItem('post'));
+        console.log(post);
+        if(post == null) {
+            const msg = {
+                id_no : 1,
+                titlee: title,
+                authorr: author,
+                datee : date,
+                content: contentt,
+            };
+            var post = [];
+            post.push(msg);
+            localStorage.setItem('post', JSON.stringify(post));
+            console.log("Message one");
         }
-
-        // else {
-        //     selectedRow.children[0].textContent = firstName;
-        //     selectedRow.children[1].textContent = lastName;
-        //     selectedRow.children[2].textContent = rollNo;
-        //     selectedRow = null;
-        //     showAlert("Student info Edited", "info");
-        // }
-        // clearFields();
+        else {
+            let length = post.length;
+            const msg = {
+                id_no : length + 1,
+                titlee: title,
+                authorr: author,
+                datee : date,
+                content: contentt,
+            };
+            post.push(msg);
+            localStorage.setItem('post', JSON.stringify(post));
+            console.log("Message two");
+        }
+  
+         clearFields();
     }
 })
