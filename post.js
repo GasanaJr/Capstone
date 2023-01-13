@@ -34,7 +34,7 @@ document.querySelector("#post-form").addEventListener("submit", (e) => {
 
     else {
         var post = JSON.parse(localStorage.getItem('post'));
-        console.log(post);
+       // console.log(post);
         if(post == null) {
             const msg = {
                 id_no : 1,

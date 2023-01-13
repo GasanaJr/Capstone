@@ -5,6 +5,7 @@ function show() {
         var myDiv = document.createElement('div');
         var title = document.createElement('h1');
         var text = document.createElement('p');
+        var image = document.createElement('img');
         title.append(post[i].titlee);
         text.append(post[i].content)
         myDiv.append(title);
