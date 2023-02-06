@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="queries.css">
     <title>Admin Portal</title>
 </head>
-<body onload="show()">
+<body>
     <header>
 		<a href="#" class="logo"><span>DJ</span></a>
 
@@ -37,32 +37,98 @@
         </div>
     <div id="table"></div>
     <script>
-        const deleteItem = (id) => {
-            // console.log(id," to be deleted");
-            const data = localStorage.getItem("query");
-            const message = JSON.parse(data);
-            message.splice(id-1,1);
-            localStorage.setItem("query",JSON.stringify(message));
-            window.location.reload();
-        }
-         const data = localStorage.getItem("query");
-            const message = JSON.parse(data);
-        function show() {
+        const token = localStorage.getItem('auth-token');
+        fetch('http://localhost:3000/message', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token
+            }
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            data.forEach(message => {
             var table = document.querySelector('table');
             var tbody = document.querySelector('tbody');
-            // var row = document.createElement('tr');
-            // var td = document.createElement('td');
-            for (let i =0; i< message.length; i++) {
-                tbody.innerHTML += `
-                <td>${message[i].email}</td>
-                <td>${message[i].fullName}</td>
-                <td>${message[i].text}</td>
-                <td><button class="button Green" id="edit"><a href="#">Reply</a></button> </td>
-                <td><button class="button Red" id="delete" onclick="deleteItem(${message[i].id})"><a href="#">Delete</a></button> </td>
-                `;
+            tbody.innerHTML += `
+                 <td>${message.email}</td>
+                 <td>${message.name}</td>
+                 <td>${message.content}</td>
+                 <td><button class="button Green" id="edit"><a href="#">Reply</a></button> </td>
+                 <td><button class="button Red delete-msg" data-id = "${message._id}"><a href="#">Delete</a></button> </td>
+                 `;
+                 
+            });    
+        })
+        .then(()=> getDeleteItem());
 
-            }
+        function getDeleteItem() {
+            const deleteBtn = [...document.getElementsByClassName('delete-msg')];
+            //console.log(deleteBtn);
+            deleteBtn.forEach(button => {
+                //console.log(button.dataset.id);
+                button.addEventListener('click', () => {
+                    const deleteId = button.dataset.id;
+                    //console.log(deleteId);
+                    deleteMessage(deleteId);
+                })
+            })
         }
+
+        async function deleteMessage(deleteId) {
+            console.log(deleteId);
+            const token = localStorage.getItem('auth-token'); 
+             try {
+                 const result = await fetch('http://localhost:3000/message/' + deleteId, {
+                     method: "DELETE",
+                     headers: {
+                         "Content-Type": "application/json",
+                         "auth-token": token,
+                     }
+                 });
+                 const data = await result.json();
+                 if(result.status == 200) {
+                 alert(data.Message);
+                 location.reload();
+                 }
+                 else {
+                     alert(data.Message);
+                 }
+             } catch (error) {
+                console.log(error);
+                
+             }
+        }
+
+
+
+        
+    //     const btn = document.getElementById('data');
+    //  btn.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     async () => {
+    //         const data = await fetch('http://localhost:3000/message', {
+    //             method: 'GET'
+    //         }).then((res) => res.json());
+    //     console.log(data);
+        // const message = JSON.parse(data);
+        //     
+        //     // var row = document.createElement('tr');
+        //     // var td = document.createElement('td');
+        //     for (let i =0; i< message.length; i++) {
+        //         tbody.innerHTML += `
+        //         <td>${message[i].email}</td>
+        //         <td>${message[i].name}</td>
+        //         <td>${message[i].content}</td>
+        //         <td><button class="button Green" id="edit"><a href="#">Reply</a></button> </td>
+        //         <td><button class="button Red" id="delete" onclick="deleteItem(${message[i].id})"><a href="#">Delete</a></button> </td>
+        //         `;
+
+           // }
+    //     }
+    //  })
         // document.querySelector('tbody').addEventListener('click', function(e){
         //     e.preventDefault();
         //     var target = e.target;

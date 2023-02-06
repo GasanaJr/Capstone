@@ -16,7 +16,7 @@ function validated() {
         return false;
     }
 
-    if(password.value.length < 9) {
+    if(password.value.length < 6) {
         password.style.border = "3px solid red";
         pass_error.style.display = "block";
         password.focus();
@@ -26,7 +26,7 @@ function validated() {
 
 function email_Verify() {
     if(email.value.length >=8) {
-        email.style.border = "3px solid silver";
+        email.style.border = "3px solid green";
         email_error.style.display = "none";
         return true;
     }
@@ -34,7 +34,7 @@ function email_Verify() {
 
 function pass_Verify() {
     if(password.value.length >=8) {
-        password.style.border = "3px solid silver";
+        password.style.border = "3px solid green";
         pass_error.style.display = "none";
         return true;
     }

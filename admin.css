@@ -40,3 +40,14 @@ margin-top: 100px;
 padding: 40px;
 font-size: 20px;
 }
+
+button {
+    height: 40px;
+    width: 70px;
+    font-size: 16px;
+    background-color: #073d58;
+    color: #d3d3d3;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
