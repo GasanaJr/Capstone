@@ -38,7 +38,7 @@
     <div id="table"></div>
     <script>
         const token = localStorage.getItem('auth-token');
-        fetch('http://localhost:3000/message', {
+        fetch('https://junior-capstone-backend.onrender.com/message', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -66,7 +66,7 @@
 
         function getDeleteItem() {
             const deleteBtn = [...document.getElementsByClassName('delete-msg')];
-            //console.log(deleteBtn);
+            console.log(deleteBtn);
             deleteBtn.forEach(button => {
                 //console.log(button.dataset.id);
                 button.addEventListener('click', () => {

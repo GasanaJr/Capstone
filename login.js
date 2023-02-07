@@ -8,7 +8,7 @@ async function login(e) {
 
 
     try {
-        const result = await fetch('http://localhost:3000/api/user/login', {
+        const result = await fetch('https://junior-capstone-backend.onrender.com/api/user/login', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -22,8 +22,16 @@ async function login(e) {
    // console.log(data.Message);
     if(result.status == 200) {
         const token = data.token;
+        const parts= token.split('.');
+        const payload = JSON.parse(atob(parts[1]))
+        console.log(payload.user.id); 
         localStorage.setItem('auth-token', token);
-        window.location.href = './admin.html';
+         if(payload.user.id == '63de379a123b0ef109245c47') {
+             window.location.href = './admin.html';
+         }
+         else {
+             window.location.href = './index.html';
+         }
     }
     else  {
         alert(data.Message);

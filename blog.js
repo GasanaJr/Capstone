@@ -1,53 +1,69 @@
-const div = document.querySelector('.blogs');
+const div = document.querySelector('.blo');
+const cdiv = document.querySelector('.comments')
     fetch('http://localhost:3000/posts')
         .then(res => {
             return res.json();
         })
         .then(data => {
              data.forEach(post => {
-                var myDiv = document.createElement('div');
-                var title = document.createElement('h1');
-                var text = document.createElement('p');
-                var image = document.createElement('img');
-                var comment = document.createElement('input');
-                comment.setAttribute('placeholder', 'Comment here');
-                comment.style.width = "400px";
-                comment.style.height = "50px";
-                comment.style.borderRadius = "5px";
-                comment.style.border = "none";
-                comment.style.backgroundColor = "#d3d3d3";
-                comment.style.padding = "10px";
-                image.setAttribute('src',"../Capstone-backend/backend/Auth/" + `${post.Image}`);
-                title.append(post.title);
-                text.append(post.description);
-                myDiv.append(image);
-                myDiv.append(title);
-                myDiv.append(text);
-               myDiv.append(comment);
-                div.appendChild(myDiv);
+                  div.innerHTML += `
+                  <div>
+                  <img src = "../Capstone-backend/backend/Auth/">
+                  <h1>${post.title}</h1>
+                  <p>${post.description}</p>
+                  <input type = "text" id ="cbox" style = "width:400px;height:50px;border-radius:5px;border:none;
+                  background-color:#d3d3d3; padding:10px"><br>
+                  <button id = "comment"  data-id = "${post._id}" class = "commentBtn">Comment</button> 
+                  <button id = "like" data-id = "${post._id}" class = "likeBtn">Like</button>
+                  </div>
+                 `
                  
-            });    
+            });
+            // data.forEach(post => {
+            //     var comments = post.comments;
+            //     for(let i =0; i<comments.length; i++) {
+            //         //console.log(comments[i].text);
+            //         cdiv.innerHTML += `
+            //         <p class = "ctext">${comments[i].text}</p>
+            //         `
+            //     }
+            // });   
+        }).then(() => getComment())
+        .then(() => getLike())
+        .then(() => getUnlike())
+
+function getComment() {
+    const commentBtn = [...document.getElementsByClassName('commentBtn')];
+    commentBtn.forEach(button => {
+       button.addEventListener('click', () => {
+        const commentId = button.dataset.id;
+        blogComment(commentId);
+       });
+    });
+}
+
+const comment = document.getElementById('comment');
+const tokenn = localStorage.getItem('auth-token');
+
+async function blogComment(commentId) {
+    var text = document.getElementById('cbox').value;
+    const result = await fetch('http://localhost:3000/posts/comment/'+ commentId, {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        "auth-token": tokenn
+        },
+        body: JSON.stringify({
+            text
         })
+    });
+    const data = await result.json();
+    if(result.status == 200) {
+        alert(data.Message);
+    }
+    else {
+        alert(data.Message);
+    }
 
 
-
-
-
-
-
-
-// var post = JSON.parse(localStorage.getItem('post')); 
-// 
-// function show() {
-//     for(var i = 0; i< post.length; i++) {
-//         var myDiv = document.createElement('div');
-//         var title = document.createElement('h1');
-//         var text = document.createElement('p');
-//         var image = document.createElement('img');
-//         title.append(post[i].titlee);
-//         text.append(post[i].content)
-//         myDiv.append(title);
-//         myDiv.append(text);
-//         div.appendChild(myDiv);
-//     }
-// }
+}

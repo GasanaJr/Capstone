@@ -9,7 +9,7 @@ document.getElementById('form').addEventListener("submit", async function(e){
     content = document.getElementById("text").value;
     email = document.getElementById("email").value;
 
-    const result = await fetch('http://localhost:3000/message/send', {
+    const result = await fetch('https://junior-capstone-backend.onrender.com/message/send', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

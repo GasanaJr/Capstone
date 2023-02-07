@@ -381,3 +381,16 @@ form p {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 } 
+
+[data-signedin = "true"] .hidden {
+  display: none;
+}
+[data-signedin = "false"] .hidden {
+  display: block;
+}
+[data-signedin = "true"] .visible {
+  display: block;
+}
+[data-signedin = "false"] .visible {
+  display: none;
+}

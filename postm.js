@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/posts')
+fetch('https://junior-capstone-backend.onrender.com/posts')
 .then(res => {
     return res.json();
 }).then(data => {
@@ -29,7 +29,7 @@ function getDelete() {
 async function deletePost(deleteId) {
     const token = localStorage.getItem('auth-token');
     try {
-        const result = await fetch('http://localhost:3000/posts/' + deleteId, {
+        const result = await fetch('https://junior-capstone-backend.onrender.com/posts/' + deleteId, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
