@@ -90,11 +90,11 @@
                  });
                  const data = await result.json();
                  if(result.status == 200) {
-                 alert(data.Message);
+                    swal(data.Message, "Message Deleted!", "success")
                  location.reload();
                  }
                  else {
-                     alert(data.Message);
+                    swal(data.Message, "Check Error", "error")
                  }
              } catch (error) {
                 console.log(error);

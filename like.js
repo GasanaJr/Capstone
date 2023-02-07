@@ -21,7 +21,7 @@ async function likePost(likeId) {
     const data = await result.json();
     const state = document.getElementById('like');
     if(result.status == 200) {
-        alert(data.Message);
+        swal(data.Message, "You liked the post!", "success")
         state.innerText = "Unlike";
         state.style.backgroundColor = "#ff4122";
     }
@@ -31,7 +31,7 @@ async function likePost(likeId) {
     }
 
     else if(result.status == 401) {
-        alert(data.Message);
+        swal(data.Message, "Check Error", "error");
     }
 
 

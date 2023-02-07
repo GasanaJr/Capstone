@@ -34,30 +34,14 @@ async function login(e) {
          }
     }
     else  {
-        alert(data.Message);
+        //swal(data.Message);
+        swal(data.Message, "Try again!", "error")
     }
         
     } catch (error) {
         console.log(error);
         
     }
-
-
-    // }).then((res) => {
-    //    if(res.status == 400) {
-    //     alert("Email or Pass Invalid");
-    //    }
-    //    else {
-    //     console.log(res);
-        //  localStorage.setItem('auth-token', res.token);
-        //  window.location.assign('C:/Users/HP/OneDrive/Desktop/Capstone/admin.html');
-       //}
-    
-    // .catch((err) => {
-    //     var error = err.json();
-    //     console.log(error.Message);
-    // });
-    // console.log(result);
 
 
 }

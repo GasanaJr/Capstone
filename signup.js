@@ -22,10 +22,10 @@ async function signup(e) {
         });
         const data = await result.json();
         if(result.status == 400) {
-            alert(data.Message);
+            swal(data.Message, "error");
         }
         else if(result.status == 201) {
-            alert(data.Message);
+            swal(data.Message, "Sign Up was successful", "success")
             window.location.href = './login.html';
         }
         

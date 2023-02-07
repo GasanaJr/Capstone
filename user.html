@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="resp.css">
-  <link rel="stylesheet" href="login.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resp.css">
+    <link rel="stylesheet" href="login.css">
+    <title>User</title>
 </head>
-<body>
-
+<body onload="display()">
     <header>
 		<a href="#" class="logo"><span>DJ</span></a>
 
@@ -23,35 +23,34 @@
             <li><a href="skills.html">Skills</a></li>
             <li><a href="port.html">Portfolio</a></li>
             <li><a href="blog.html">Blogs</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html"  class="visible">Login</a>
+                <a href="logout.html" class="hidden">Logout</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="user.html" class="hidden">User</a></li>
 		</ul>
-        <div class="main">
+
+		<div class="main">
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
+
     <section class="login">
-        <form class="login_form" id="login_form" name="form" onsubmit="return validated()">
-            <h3>ADMIN LOGIN</h3>
+        <form class="update_form" id="update_form" name="form">
+            <h3>USER</h3>
             <div>
             <label for="">Email</label> <br>
             <input type="text" id="email" name="email" autocomplete="off"><br><br>
             </div>
-            <div id="email_error">Please Fill Your Email</div>
             <div>
-                <label for="">Password</label><br>
-                <input type="password" id="password" name="password"><br><br>
+                <label for="">Fullname</label><br>
+                <input type="text" id="name"><br><br>
             </div>
-            <div id="pass_error">Please Fill Your Password</div>
-            <button type="submit">Login</button>
-            <div class="sign">
-                <p>Not a member, click here to Sign up</p><a href="signup.html">Sign Up</a>
-            </div>
+            <button type="submit">Update</button>
         </form>
     </section>
+    
+
     <script src="script.js"></script>
-    <script src="valid.js"></script>
-    <script src="login.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="user.js"></script>
 </body>
 </html>

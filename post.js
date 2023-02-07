@@ -49,10 +49,10 @@ document.querySelector("#post-form").addEventListener("submit", async(e) => {
 
        const data = await result.json();
        if(result.status == 201) {
-        alert(data.Message);
+        swal(data.Message, "You created a Post", "success")
        }
        else {
-        alert(data.Message);
+        swal(data.Message, "Check the Error", "error")
        }
 
 

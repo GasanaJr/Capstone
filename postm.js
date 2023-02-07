@@ -38,10 +38,10 @@ async function deletePost(deleteId) {
         });
         const data = await result.json();
         if(result.status == 200) {
-            alert(data.Message);
+            swal(data.Message, "Post Deleted", "success")
             location.reload();
         } else {
-            alert(data.Message);
+            swal(data.Message, "Check the Error", "error")
         }
     } catch(error) {
         console.log(error);

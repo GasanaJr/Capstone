@@ -52,11 +52,11 @@ async function blogComment(commentId) {
     });
     const data = await result.json();
     if(result.status == 200) {
-        alert(data.Message);
+        swal(data.Message, "Thank you for the feedback", "success")
         text = "";
     }
     else {
-        alert(data.Message);
+        swal(data.Message, "error")
     }
 
 
