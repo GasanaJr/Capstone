@@ -8,7 +8,7 @@ const cdiv = document.querySelector('.comments')
              data.forEach(post => {
                   div.innerHTML += `
                   <div>
-                  <img src = "../Capstone-backend/backend/Auth/">
+                  <img src = "/${post.Image}">
                   <h1>${post.title}</h1>
                   <p>${post.description}</p>
                   <input type = "text" id ="cbox" style = "width:400px;height:50px;border-radius:5px;border:none;
