@@ -382,6 +382,11 @@ form p {
   .col-12 {width: 100%;}
 } 
 
+#name {
+   color: rgb(48, 45, 45);
+   font-size: 14px;
+}
+
 [data-signedin = "true"] .hidden {
   display: none;
 }

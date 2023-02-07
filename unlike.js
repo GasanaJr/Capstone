@@ -1,6 +1,3 @@
-
-
-
 const toke= localStorage.getItem('auth-token');
 function getUnlike() {
     const likeBtn = [...document.getElementsByClassName('likeBtn')];
@@ -27,9 +24,13 @@ async function unLikePost(likeId) {
         state.innerText = "like";
         state.backgroundColor = "#ff4122";
     }
-    else if (result.status == 400) {
+    else if(result.status == 400)  {
        likePost();
     }
+    else if(result.status == 401) {
+        alert(data.Message);
+    }
+
 
 }
 
