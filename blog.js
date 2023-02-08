@@ -1,6 +1,6 @@
 const div = document.querySelector('.blo');
 const tokenn = localStorage.getItem('auth-token');
-    fetch('https://junior-capstone-backend.onrender.com/posts')
+    fetch('https://capstone-backend-didas.onrender.com/posts')
         .then(res => {
             return res.json();
         })
@@ -29,7 +29,7 @@ const tokenn = localStorage.getItem('auth-token');
                  `
                  
             });  
-        }).then(() => getComment())
+         })
         .then(() => getLike())
         .then(() => getUnlike())
         // .then(() => displayComment())
