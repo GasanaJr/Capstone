@@ -8,7 +8,7 @@ const tokenn = localStorage.getItem('auth-token');
              data.forEach(post => {
                   div.innerHTML += `
                   <div>
-                  <img src = "../Capstone-backend/backend/Auth/${post.Image}">
+                  <img src = "${post.Image}">
                   <h1>${post.title}</h1>
                   <p>${post.description}</p>
                   <input type = "text" id ="cbox${post._id}" style = "width:400px;height:50px;border-radius:5px;border:none;
