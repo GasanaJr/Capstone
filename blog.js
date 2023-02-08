@@ -1,6 +1,6 @@
 const div = document.querySelector('.blo');
 const tokenn = localStorage.getItem('auth-token');
-    fetch('http://localhost:3000/posts')
+    fetch('https://junior-capstone-backend.onrender.com/posts')
         .then(res => {
             return res.json();
         })

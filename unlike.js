@@ -10,7 +10,7 @@ function getUnlike() {
 }
 
 async function unLikePost(likeId) {
-    const result = await fetch('http://localhost:3000/posts/unlike/'+ likeId, {
+    const result = await fetch('https://junior-capstone-backend.onrender.com/posts/unlike/'+ likeId, {
         method: "PUT",
         headers: {
         "Content-Type": "application/json",

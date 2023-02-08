@@ -7,7 +7,7 @@ async function display() {
     const user = payload.user.id;
 
     try {
-        const result = await fetch('http://localhost:3000/api/user/' + user, {
+        const result = await fetch('https://junior-capstone-backend.onrender.com/api/user/' + user, {
         method: 'GET',
         headers: {
         'Content-Type': 'application/json'

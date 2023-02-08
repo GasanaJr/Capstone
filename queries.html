@@ -81,7 +81,7 @@
             console.log(deleteId);
             const token = localStorage.getItem('auth-token'); 
              try {
-                 const result = await fetch('http://localhost:3000/message/' + deleteId, {
+                 const result = await fetch('https://junior-capstone-backend.onrender.com/message/' + deleteId, {
                      method: "DELETE",
                      headers: {
                          "Content-Type": "application/json",

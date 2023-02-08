@@ -11,7 +11,7 @@ function getLike() {
 }
 
 async function likePost(likeId) {
-    const result = await fetch('http://localhost:3000/posts/like/'+ likeId, {
+    const result = await fetch('https://junior-capstone-backend.onrender.com/posts/like/'+ likeId, {
         method: "PUT",
         headers: {
         "Content-Type": "application/json",

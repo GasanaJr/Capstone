@@ -9,7 +9,7 @@ async function signup(e) {
     password = document.getElementById("pass").value;
 
     try {
-        const result = await fetch('http://localhost:3000/api/user/register', {
+        const result = await fetch('https://junior-capstone-backend.onrender.com/api/user/register', {
             method: 'POST',
             headers: {  
                 'Content-Type': 'application/json'
