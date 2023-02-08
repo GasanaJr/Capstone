@@ -19,7 +19,7 @@ async function likePost(likeId) {
         }
     });
     const data = await result.json();
-    const state = document.getElementById('like');
+    const state = document.getElementById('like'+likeId);
     if(result.status == 200) {
         swal(data.Message, "You liked the post!", "success")
         state.innerText = "Unlike";

@@ -19,7 +19,7 @@ async function unLikePost(likeId) {
     });
     const data = await result.json();
     if(result.status == 200) {
-        const state = document.getElementById('like')
+        const state = document.getElementById('like'+likeId);
         swal(data.Message, "You Unliked this Post", "success");
         state.innerText = "like";
         state.backgroundColor = "#ff4122";

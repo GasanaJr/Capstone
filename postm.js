@@ -5,10 +5,15 @@ fetch('https://junior-capstone-backend.onrender.com/posts')
     const table = document.querySelector('#post-list');
     data.forEach(post => {
         const row = document.createElement('tr');
+        var fulldate = post.date;
+        var date = fulldate.split("T")[0];
+        var timee = fulldate.split("T")[1];
+        var time = timee.split('.')[0];8
                  row.innerHTML = `
                  <td>${post.title}</td>
                  <td>${post.name}</td>
-                 <td>${post.date}</td>
+                 <td>${date}</td>
+                 <td>${time}</td>
                  <td><button class="button Red delete-post" id="delete" data-id = "${post._id}"><a href="#">Delete</a></button> </td>
                  `
                  table.append(row);  
@@ -39,7 +44,7 @@ async function deletePost(deleteId) {
         const data = await result.json();
         if(result.status == 200) {
             swal(data.Message, "Post Deleted", "success")
-            location.reload();
+            // location.reload();
         } else {
             swal(data.Message, "Check the Error", "error")
         }

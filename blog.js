@@ -11,12 +11,20 @@ const tokenn = localStorage.getItem('auth-token');
                   <img src = "../Capstone-backend/backend/Auth/${post.Image}">
                   <h1>${post.title}</h1>
                   <p>${post.description}</p>
-                  <input type = "text" id ="cbox" style = "width:400px;height:50px;border-radius:5px;border:none;
+                  <input type = "text" id ="cbox${post._id}" style = "width:400px;height:50px;border-radius:5px;border:none;
                   background-color:#d3d3d3; padding:10px" class = "hidden"><br>
                   <div class = "hidden">
-                  <button id = "comment"  data-id = "${post._id}" class = "commentBtn">Comment</button> 
-                  <button id = "like" data-id = "${post._id}" class = "likeBtn">Like</button>
+                  <button id = "comment${post._id}"  data-id = "${post._id}" class = "commentBtn comment">Comment</button> 
+                  <button id = "like${post._id}" data-id = "${post._id}" class = "likeBtn like">Like</button>
+
                   </div>
+                  ${post.comments.map((item)=>{
+                    return (` 
+                        <div>
+                        <p id = "name">${item.name}</p>
+                   <p class = "ctext">${item.text}</p></div>
+                    `)
+                  })}
                   </div>
                  `
                  
@@ -24,14 +32,15 @@ const tokenn = localStorage.getItem('auth-token');
         }).then(() => getComment())
         .then(() => getLike())
         .then(() => getUnlike())
-        .then(() => displayComment());
+        // .then(() => displayComment())
 
 function getComment() {
     const commentBtn = [...document.getElementsByClassName('commentBtn')];
     commentBtn.forEach(button => {
        button.addEventListener('click', () => {
         const commentId = button.dataset.id;
-        blogComment(commentId);
+        // console.log(commentId);
+         blogComment(commentId);
        });
     });
 }
@@ -39,7 +48,7 @@ function getComment() {
 const comment = document.getElementById('comment');
 
 async function blogComment(commentId) {
-    var text = document.getElementById('cbox').value;
+    var text = document.getElementById('cbox'+commentId).value;
     const result = await fetch('http://localhost:3000/posts/comment/'+ commentId, {
         method: "POST",
         headers: {

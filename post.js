@@ -38,7 +38,7 @@ document.querySelector("#post-form").addEventListener("submit", async(e) => {
 
     else {
         const token = localStorage.getItem('auth-token');
-       const result = await fetch('https://junior-capstone-backend.onrender.com/posts', {
+       const result = await fetch('http://localhost:300/posts', {
         method: 'POST',
         headers: {
             // "Content-Type": "multipart/form-data",
