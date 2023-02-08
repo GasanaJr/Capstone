@@ -29,7 +29,7 @@ const tokenn = localStorage.getItem('auth-token');
                  `
                  
             });  
-         })
+         }).then(() => getComment())
         .then(() => getLike())
         .then(() => getUnlike())
         // .then(() => displayComment())
