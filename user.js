@@ -22,7 +22,7 @@ async function display() {
         name.value = data.name;
     }
     else  {
-        alert(data.Message);
+        swal(data.Message, 'error');
     }
         
     } catch (error) {
@@ -45,7 +45,7 @@ async function update(e) {
 
 
     try {
-        const result = await fetch('http://localhost:3000/api/user/' + userr, {
+        const result = await fetch('https://junior-capstone-backend.onrender.com/api/user/' + userr, {
         method: 'PATCH',
         headers: {
         'Content-Type': 'application/json'

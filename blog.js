@@ -1,11 +1,22 @@
 const div = document.querySelector('.blo');
 const tokenn = localStorage.getItem('auth-token');
+function show() {
+    document.getElementById('load').style.visibility ="visible";
+    document.querySelector('body').style.visibility ="hidden";
+}
+function hide() {
+    document.getElementById('load').style.visibility="hidden";
+    document.querySelector('body').style.visibility ="visible";
+}
+
+show()
     fetch('https://capstone-backend-didas.onrender.com/posts')
         .then(res => {
             return res.json();
         })
         .then(data => {
              data.forEach(post => {
+                hide();
                   div.innerHTML += `
                   <div>
                   <img src = "${post.Image}">
