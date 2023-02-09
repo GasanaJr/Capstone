@@ -59,8 +59,9 @@ function getComment() {
 const comment = document.getElementById('comment');
 
 async function blogComment(commentId) {
+    show();
     var text = document.getElementById('cbox'+commentId).value;
-    const result = await fetch('http://localhost:3000/posts/comment/'+ commentId, {
+    const result = await fetch('https://junior-capstone-backend.onrender.com/posts/comment/'+ commentId, {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
@@ -72,10 +73,12 @@ async function blogComment(commentId) {
     });
     const data = await result.json();
     if(result.status == 200) {
+        hide();
         swal(data.Message, "Thank you for the feedback", "success")
         text = "";
     }
     else {
+        hide();
         swal(data.Message, "error")
     }
 

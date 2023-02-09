@@ -1,4 +1,12 @@
 const to = localStorage.getItem('auth-token');
+function show() {
+    document.getElementById('load').style.visibility ="visible";
+    document.querySelector('body').style.visibility ="hidden";
+}
+function hide() {
+    document.getElementById('load').style.visibility="hidden";
+    document.querySelector('body').style.visibility ="visible";
+}
 
 function getLike() {
     const likeBtn = [...document.getElementsByClassName('likeBtn')];
@@ -11,6 +19,7 @@ function getLike() {
 }
 
 async function likePost(likeId) {
+    show();
     const result = await fetch('https://junior-capstone-backend.onrender.com/posts/like/'+ likeId, {
         method: "PUT",
         headers: {
@@ -21,6 +30,7 @@ async function likePost(likeId) {
     const data = await result.json();
     const state = document.getElementById('like'+likeId);
     if(result.status == 200) {
+        hide();
         swal(data.Message, "You liked the post!", "success")
         state.innerText = "Unlike";
         state.style.backgroundColor = "#ff4122";
