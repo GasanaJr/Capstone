@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body {
+    font-family: "Poppins", sans-serif;
+}
+.subscribe {
+    margin-top: 200px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.subscribe form {
+    background: #fff;
+    display: flex;
+    width: fit-content;
+}
+
+.subscribe form input {
+    border: 0;
+    outline: none;
+    padding: 10px 20px;
+    height: 50px;
+    width: 400px;
+    font-size: 16px;
+}
+
+.subscribe form button {
+    background: #fff;
+    border: none;
+    outline: none;
+    height: 70px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#one {
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+
+span {
+    font-size: 35px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+

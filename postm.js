@@ -8,7 +8,7 @@ fetch('https://junior-capstone-backend.onrender.com/posts')
         var fulldate = post.date;
         var date = fulldate.split("T")[0];
         var timee = fulldate.split("T")[1];
-        var time = timee.split('.')[0];8
+        var time = timee.split('.')[0];
                  row.innerHTML = `
                  <td>${post.title}</td>
                  <td>${post.name}</td>

@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resp.css">
-    <link rel="stylesheet" href="post.css">
-    <title>Posts</title>
+    <link rel="stylesheet" href="queries.css">
+    <title>Admin Portal</title>
 </head>
 <body>
-     <header>
+    <header>
 		<a href="#" class="logo"><span>DJ</span></a>
 
 		<ul class="navbar">
@@ -26,37 +26,20 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-
-    <section>
-        <h3>POSTS AVAILABLE ON THE BLOG</h3>
-    <table>
-        <thead>
-            <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th colspan="3">Action</th>
-          </tr>
-
-        </thead>
-        <tbody id="post-list">
-        </tbody>
-        
-      </table>
-    </section>
-    <section class="updatee" id="upd">
-    <h3>Update a new post</h3>
-    <form id="update-form">
-        <div>
-            <label for="">Title</label>
-            <input type="text" class="text-input" id="title">
+    <div>
+        <table>
+    <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Time</th>
+    </thead>
+   <tbody>
+   </tbody>
+   </table>
         </div>
-        <button type="submit" id="update" class="button">Update</button>
-    </form>
-    </section>
-    <script src="postm.js"></script>
-    <script src="update.js"></script>
+    <div id="table"></div>
+    <script src="view.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
 </body>

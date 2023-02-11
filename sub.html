@@ -8,12 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sub.css">
     <link rel="stylesheet" href="resp.css">
-    <link rel="stylesheet" href="login.css">
-    <title>User</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Capstone</title>
 </head>
-<body onload="display()">
+<body>
     <header>
 		<a href="#" class="logo"><span>DJ</span></a>
 
@@ -34,33 +34,31 @@
 		<div class="main">
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
+        </header>
+        <section class="subscribe">
+            <div>
+                <div>
+                 <p id="one">
+                     You made it this far! <br> How about <span>Subscribing</span> to our Website
+                 </p>
+                 <p>Subscribe to Our Website</p>
+                 <form id="subscribe">
+                     <div>
+                         <input type="email" name="" placeholder="Email adress" id="email">
+                         <button type="submit">Subscribe</button>
+                     </div>
+                 </form>
+                </div>
+            </div>
+            <div>
+                <img src="sub-removebg-preview (1).png" alt="">
+            </div>
+         
+        </section>
+       
 	</header>
-
-    <section class="login user">
-        <div class="image">
-
-        </div>
-        <form class="update_form" id="update_form" name="form">
-            <h3>USER</h3>
-            <div>
-            <label for="">Email</label> <br>
-            <input type="text" id="email" name="email" autocomplete="off"><br><br>
-            </div>
-            <div>
-                <label for="">Fullname</label><br>
-                <input type="text" id="name"><br><br>
-            </div>
-            <!-- <div>
-                <label for="">Phone Number</label><br>
-                <input type="text" id="number"><br><br>
-            </div> -->
-            <button type="submit">Update</button>
-        </form> 
-    </section>
-    
-
     <script src="script.js"></script>
-    <script src="user.js"></script>
+    <script src="sub.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

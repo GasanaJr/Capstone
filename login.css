@@ -91,6 +91,18 @@ h3 {
     animation: rotation 1s linear infinite;
     }
 
+.user {
+    display: flex;
+    margin-top: 40px;
+}
+
+#image {
+    width: 500px;
+    height: 400px;
+    margin-left: 60px;
+    border-radius: 5px;
+}
+
     @keyframes rotation {
     0% {
         transform: rotate(0deg);

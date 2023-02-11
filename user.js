@@ -1,6 +1,9 @@
 async function display() {
     var email = document.getElementById('email');
     var name = document.getElementById('name');
+    var phone = document.getElementById('phone');
+    const div = document.querySelector('.image');
+    const image = document.getElementById('image');
     const token = localStorage.getItem('auth-token');
     const parts= token.split('.');
     const payload = JSON.parse(atob(parts[1]))
@@ -14,13 +17,17 @@ async function display() {
     }
 })
     const data = await result.json();
-   // console.log(data.Message);
-    if(result.status == 200) {
-        console.log();
-        console.log(data.name);
-        email.value = data.email;
-        name.value = data.name;
-    }
+   console.log(data.Image);
+     if(result.status == 200) {
+        div.innerHTML += `
+        <img src="${data.Image}" alt="" id="image">
+        `
+    //    console.log();
+     //   console.log(data.name);
+          email.value = data.email;
+          name.value = data.name;
+        //  phone.value = data.phone;
+     }
     else  {
         swal(data.Message, 'error');
     }

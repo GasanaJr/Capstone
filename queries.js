@@ -52,7 +52,7 @@ const token = localStorage.getItem('auth-token');
                  const data = await result.json();
                  if(result.status == 200) {
                     swal(data.Message, "Message Deleted!", "success")
-                 location.reload();
+                 //location.reload();
                  }
                  else {
                     swal(data.Message, "Check Error", "error")
