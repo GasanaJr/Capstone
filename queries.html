@@ -37,8 +37,19 @@
    <tbody>
    </tbody>
    </table>
-        </div>
+ </div>
     <div id="table"></div>
+    <section class="updatee" id="upd">
+        <h3>Reply</h3>
+        <form id="update-form">
+            <div>
+                <label for="">Email</label>
+                <input type="text" class="text-input" id="email">
+                <label for="">Content</label>
+                <input type="text" class="text-input" id="content">
+            </div>
+            <button type="submit" id="update" class="button Green">Reply</button>
+        </form>
     <script>
         // const token = localStorage.getItem('auth-token');
         // fetch('https://junior-capstone-backend.onrender.com/message', {
@@ -141,6 +152,7 @@
         // });
     </script>
     <script src="queries.js"></script>
+    <script src="reply.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
 </body>

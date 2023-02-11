@@ -14,20 +14,21 @@ const token = localStorage.getItem('auth-token');
             var table = document.querySelector('table');
             var tbody = document.querySelector('tbody');
             tbody.innerHTML += `
-                 <td>${message.email}</td>
+                 <td id = "em">${message.email}</td>
                  <td>${message.name}</td>
                  <td>${message.content}</td>
-                 <td><button class="button Green" id="edit"><a href="#">Reply</a></button> </td>
+                 <td><button class="button Green reply-msg" id="edit" data-id = "${message._id}" ><a href="#">Reply</a></button> </td>
                  <td><button class="button Red delete-msg" data-id = "${message._id}"><a href="#">Delete</a></button> </td>
                  `;
                  
             });    
         })
-        .then(()=> getDeleteItem());
+        .then(()=> getDeleteItem())
+        .then(() => getReply());
 
         function getDeleteItem() {
             const deleteBtn = [...document.getElementsByClassName('delete-msg')];
-            console.log(deleteBtn);
+            //console.log(deleteBtn);
             deleteBtn.forEach(button => {
                 //console.log(button.dataset.id);
                 button.addEventListener('click', () => {
