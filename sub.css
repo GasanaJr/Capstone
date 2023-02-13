@@ -48,6 +48,7 @@ span {
     width: 48px;
     height: 48px;
     margin-top: 50px;
+    visibility: hidden;
     margin-left: 50%;
     border: 5px solid #073d58;
     border-bottom-color: transparent;

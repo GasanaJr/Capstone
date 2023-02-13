@@ -83,6 +83,7 @@ h3 {
     height: 48px;
     margin-top: 50px;
     margin-left: 50%;
+    visibility: hidden;
     border: 5px solid #073d58;
     border-bottom-color: transparent;
     border-radius: 50%;
