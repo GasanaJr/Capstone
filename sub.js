@@ -1,8 +1,18 @@
 const subForm = document.querySelector('#subscribe');
 var email = document.getElementById('email');
 
+function show() {
+    document.getElementById('load').style.visibility ="visible";
+    document.querySelector('body').style.visibility ="hidden";
+}
+function hide() {
+    document.getElementById('load').style.visibility="hidden";
+    document.querySelector('body').style.visibility ="visible";
+}
+
 subForm.addEventListener('submit', async(e) => {
     e.preventDefault();
+    show();
 
     let formData = {
         email: email.value
@@ -34,6 +44,7 @@ subForm.addEventListener('submit', async(e) => {
      xhr.setRequestHeader('content-type', 'application/json');
      xhr.onload = function() {
          console.log(xhr.status);
+         hide();
          if(xhr.status == 200) {
             swal("Thank you for subscribing", "You will get a confirmation email shortly", 'success');
          }
