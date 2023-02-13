@@ -1,4 +1,5 @@
 async function display() {
+    show();
     var email = document.getElementById('email');
     var name = document.getElementById('name');
     var phone = document.getElementById('phone');
@@ -18,6 +19,7 @@ async function display() {
 })
     const data = await result.json();
    console.log(data.Image);
+   hide();
      if(result.status == 200) {
         div.innerHTML += `
         <img src="${data.Image}" alt="" id="image">
@@ -43,6 +45,7 @@ const form = document.getElementById('update_form');
 form.addEventListener('submit', update);
 
 async function update(e) {
+    show()
     e.preventDefault();
     var name= document.getElementById('name').value;
     const tokenn = localStorage.getItem('auth-token');
@@ -62,6 +65,7 @@ async function update(e) {
     })
 })
     const data = await result.json();
+    hide();
    // console.log(data.Message);
     if(result.status == 200) {
         swal(data.Message, "success")
@@ -77,4 +81,13 @@ async function update(e) {
     }
 
 
+}
+
+function show() {
+    document.getElementById('load').style.visibility ="visible";
+    document.querySelector('body').style.visibility ="hidden";
+}
+function hide() {
+    document.getElementById('load').style.visibility="hidden";
+    document.querySelector('body').style.visibility ="visible";
 }
