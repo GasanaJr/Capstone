@@ -6,6 +6,10 @@ async function display() {
     const div = document.querySelector('.image');
     const image = document.getElementById('image');
     const token = localStorage.getItem('auth-token');
+//console.log(token);
+if(!token) {
+    window.location.href = "./login.html"
+}
     const parts= token.split('.');
     const payload = JSON.parse(atob(parts[1]))
     const user = payload.user.id;

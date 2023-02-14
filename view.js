@@ -1,4 +1,8 @@
 const token = localStorage.getItem('auth-token');
+//console.log(token);
+if(!token) {
+    window.location.href = "./login.html"
+}
         fetch('https://junior-capstone-backend.onrender.com/api/user', {
             method: "GET",
             headers: {

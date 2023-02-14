@@ -1,3 +1,4 @@
+
 const subForm = document.querySelector('#subscribe');
 var email = document.getElementById('email');
 
@@ -45,7 +46,7 @@ subForm.addEventListener('submit', async(e) => {
      xhr.onload = function() {
          console.log(xhr.status);
          hide();
-         if(xhr.status == 200) {
+         if(xhr.status == 201) {
             swal("Thank you for subscribing", "You will get a confirmation email shortly", 'success');
          }
          else if (xhr.status == 400){

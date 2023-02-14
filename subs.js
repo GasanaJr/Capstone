@@ -1,9 +1,20 @@
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navbar.classList.toggle('open');
+}
 const token = localStorage.getItem('auth-token');
-        fetch('https://junior-capstone-backend.onrender.com/subscribe', {
+//console.log(token);
+if(!token) {
+    window.location.href = "./login.html"
+}
+        fetch('http://localhost:3000/subscribe', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-               // "auth-token": token
+                "auth-token": token
             }
         })
         .then(res => {

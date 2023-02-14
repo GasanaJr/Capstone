@@ -36,6 +36,9 @@ function getDelete() {
 
 async function deletePost(deleteId) {
     const token = localStorage.getItem('auth-token');
+    if(!token) {
+        window.location.href = "./login.html"
+    }
     try {
         const result = await fetch('https://junior-capstone-backend.onrender.com/posts/' + deleteId, {
         method: "DELETE",

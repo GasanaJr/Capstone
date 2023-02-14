@@ -38,6 +38,9 @@ document.querySelector("#post-form").addEventListener("submit", async(e) => {
 
     else {
         const token = localStorage.getItem('auth-token');
+        if(!token) {
+            window.location.href = "./login.html"
+        }
        const result = await fetch('https://junior-capstone-backend.onrender.com/posts', {
         method: 'POST',
         headers: {
