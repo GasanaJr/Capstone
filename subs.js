@@ -10,7 +10,7 @@ const token = localStorage.getItem('auth-token');
 if(!token) {
     window.location.href = "./login.html"
 }
-        fetch('http://localhost:3000/subscribe', {
+        fetch('https://junior-capstone-backend.onrender.com/subscribe', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
