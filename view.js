@@ -22,13 +22,21 @@ if(!token) {
             var table = document.querySelector('table');
             var tbody = document.querySelector('tbody');
             tbody.innerHTML += `
-                 <td>${user.name}</td>
-                 <td>${user.email}</td>
-                 <td>${date}</td>
-                 <td>${time}</td>
+                 <td data-label = "Name">${user.name}</td>
+                 <td class = "email" data-label = "Email">${user.email}</td>
+                 <td data-label = "Date">${date}</td>
+                 <td data-label = "Time">${time}</td>
                  `;
                  
             });    
         }).catch(err => {
             console.log(err);
         })
+
+        let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navbar.classList.toggle('open');
+}

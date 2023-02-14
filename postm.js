@@ -10,12 +10,12 @@ fetch('https://junior-capstone-backend.onrender.com/posts')
         var timee = fulldate.split("T")[1];
         var time = timee.split('.')[0];
                  row.innerHTML = `
-                 <td>${post.title}</td>
-                 <td>${post.name}</td>
-                 <td>${date}</td>
-                 <td>${time}</td>
-                 <td><button class="button Red delete-post" id="delete" data-id = "${post._id}"><a href="#">Delete</a></button> </td>
-                 <td><button class="button Green update-post" id="update" data-id = "${post._id}"><a href="#">Update</a></button> </td>
+                 <td data-label = "Title">${post.title}</td>
+                 <td data-label = "Name">${post.name}</td>
+                 <td data-label = "Date">${date}</td>
+                 <td data-label = "Time">${time}</td>
+                 <td data-label = "Delete"><button class="button Red delete-post" id="delete" data-id = "${post._id}"><a href="#">Delete</a></button> </td>
+                 <td data-label = "Update"><button class="button Green update-post" id="update" data-id = "${post._id}"><a href="#">Update</a></button> </td>
                  `
                  table.append(row);  
     });
@@ -58,5 +58,13 @@ async function deletePost(deleteId) {
         console.log(error);
     }
 
+}
+
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navbar.classList.toggle('open');
 }
 

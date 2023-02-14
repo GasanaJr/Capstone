@@ -17,11 +17,11 @@ if(!token) {
             var table = document.querySelector('table');
             var tbody = document.querySelector('tbody');
             tbody.innerHTML += `
-                 <td id = "em">${message.email}</td>
-                 <td>${message.name}</td>
-                 <td>${message.content}</td>
-                 <td><button class="button Green reply-msg" id="edit" data-id = "${message._id}" ><a href="#">Reply</a></button> </td>
-                 <td><button class="button Red delete-msg" data-id = "${message._id}"><a href="#">Delete</a></button> </td>
+                 <td class = "email" data-label = "Email">${message.email}</td>
+                 <td data-label = "Name">${message.name}</td>
+                 <td data-label = "Content">${message.content}</td>
+                 <td data-label = "Reply"><button class="button Green reply-msg" id="edit" data-id = "${message._id}" ><a href="#">Reply</a></button> </td>
+                 <td data-label = "Delete"><button class="button Red delete-msg" data-id = "${message._id}" ><a href="#">Delete</a></button> </td>
                  `;
                  
             });    
@@ -65,4 +65,12 @@ if(!token) {
                 console.log(error);
                 
              }
+        }
+
+        let menu = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+        
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navbar.classList.toggle('open');
         }

@@ -70,6 +70,7 @@ document.querySelector("#post-form").addEventListener("submit", async(e) => {
 
 
 
+
     //     var post = JSON.parse(localStorage.getItem('post'));
     //    // console.log(post);
     //     if(post == null) {
@@ -102,3 +103,11 @@ document.querySelector("#post-form").addEventListener("submit", async(e) => {
          clearFields();
     }
 })
+
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navbar.classList.toggle('open');
+}
