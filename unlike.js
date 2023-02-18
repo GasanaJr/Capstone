@@ -1,7 +1,7 @@
 const toke= localStorage.getItem('auth-token');
-if(!tok) {
-    window.location.href = "./login.html"
-}
+// if(!tok) {
+//     window.location.href = "./login.html"
+// }
 function show() {
     document.getElementById('load').style.visibility ="visible";
     document.querySelector('body').style.visibility ="hidden";
