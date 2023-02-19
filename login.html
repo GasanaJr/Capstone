@@ -32,28 +32,12 @@
 		</div>
 	</header>
     <span class="loader" id="load"></span>
-    <section class="login">
-        <form class="login_form" id="login_form" name="form" onsubmit="return validated()">
-            <h3>ADMIN LOGIN</h3>
-            <div>
-            <label for="">Email</label> <br>
-            <input type="text" id="email" name="email" autocomplete="off"><br><br>
-            </div>
-            <div id="email_error">Please Fill Your Email</div>
-            <div>
-                <label for="">Password</label><br>
-                <input type="password" id="password" name="password"><br><br>
-            </div>
-            <div id="pass_error">Please Fill Your Password</div>
-            <button type="submit">Login</button>
-            <div class="sign">
-                <p>Not a member, click here to Sign up</p><a href="signup.html">Sign Up</a>
-            </div>
-        </form>
-    </section>
+    <div id="root"></div>
     <script src="script.js"></script>
-    <script src="valid.js"></script>
-    <script src="login.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="logins.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

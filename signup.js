@@ -7,14 +7,12 @@ async function signup(e) {
     name = document.getElementById("fname").value;
     email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
-    phone = document.getElementById("phone").value;
     files = document.getElementById('file');
     const formData = new FormData();
 
     formData.append('name', name);
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('phone', phone);
 
     for(let i =0; i<files.files.length; i++) {
         formData.append('image', files.files[i]);
@@ -24,9 +22,9 @@ async function signup(e) {
     try {
         const result = await fetch('https://junior-capstone-backend.onrender.com/api/user/register', {
             method: 'POST',
-            headers: {  
-                'Content-Type': 'application/json'
-            },
+            // headers: {  
+            //     'Content-Type': 'multipart/form-data'
+            // },
             body: formData
         });
         const data = await result.json();
@@ -37,7 +35,6 @@ async function signup(e) {
             swal(data.Message, "Sign Up was successful", "success")
             window.location.href = './login.html';
         }
-        
     } catch (error) {
         console.log(error);
     }    
