@@ -7,14 +7,12 @@ async function signup(e) {
     name = document.getElementById("fname").value;
     email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
-    phone = document.getElementById("phone").value;
     files = document.getElementById('file');
     const formData = new FormData();
 
     formData.append('name', name);
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('phone', phone);
 
     for(let i =0; i<files.files.length; i++) {
         formData.append('image', files.files[i]);
