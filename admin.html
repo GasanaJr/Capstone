@@ -28,32 +28,7 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-    <section class="userr">
-        <h2>Welcome Admin</h2>
-        <p id="admin">Admin privileges</p>
-        <table>
-            <tr>
-              <th>Privilege</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>Edit</td>  
-              <td>Make Edits to the contents on the existing articles on the blog.</td>
-            <tr>
-                <td>Delete</td>
-                <td>Delete existing articles on the blog.</td>
-              </tr>
-              <tr>
-                <td>Publish</td>
-                <td>This is for publishing the edits you made on the articles or newly created articles</td>
-              </tr>
-              <tr>
-                <td>Add Post</td>
-                <td>This is for creating or adding a new article on the blog</td>
-              </tr>
-          </table>
-
-    </section>
+  <div id="root"></div>
     <h2>Blog Statistics</h2>
     <section class="stats">
     	<div class="stati">
@@ -66,7 +41,7 @@
             </p>
             <div id="donutchart" style="width: 1200px; height: 500px;" class="size"></div>
         </div>
-    </section>
+    </section> 
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -116,9 +91,13 @@
         chart.draw(data, options);
       }
         
-      </script>
-      <script src="admin.js"></script>
+      </script> 
+      <script src="admin.js"></script> 
       <script src="script.js"></script>
+      <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="adminr.js"></script>
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

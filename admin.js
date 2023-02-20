@@ -3,12 +3,12 @@ if(!token) {
     window.location.href = "./login.html"
 }
 
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let menuu = document.querySelector('#menu-icon');
+let navbarr = document.querySelector('.navbar');
 
-menu.onclick = () => {
-	menu.classList.toggle('bx-x');
-	navbar.classList.toggle('open');
+menuu.onclick = () => {
+	menuu.classList.toggle('bx-x');
+	navbarr.classList.toggle('open');
 }
 
 // const btn = document.getElementById('logout');
